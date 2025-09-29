@@ -1,0 +1,10 @@
+from sklearn.metrics import plot_confusion_matrix
+
+y_true = [0,1,1,1,0]
+y_pred = [1,1,1,1,0]
+
+IC = type('IdentityClassifier', (), {"predict": lambda i : i, "_estimator_type": "classifier"})
+
+cm = plot_confusion_matrix(IC, y_pred, y_true, normalize='true',  values_format='.2%')
+    
+cm.figure_.savefig('confusion_matrix.png')
