@@ -105,4 +105,4 @@ plt.show()
 
 import joblib
 
-joblib.dump(output_folder, "random_forest_model.pkl")
+joblib.dump(train_model, "random_forest_model.pkl")
